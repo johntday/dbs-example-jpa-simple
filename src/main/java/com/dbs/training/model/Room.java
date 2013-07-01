@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 /**
- * Class room.
+ * Classroom.
  * 
  * @author jtday
  */
