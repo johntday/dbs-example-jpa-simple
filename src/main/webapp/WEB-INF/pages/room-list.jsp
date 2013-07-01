@@ -12,28 +12,28 @@
 <table style="text-align: center;" border="1px" cellpadding="0" cellspacing="0" >
 <thead>
 <tr>
-<th width="50px">id</th>
-<th width="50px">code</th>
-<th width="50px">name</th>
-<th width="50px">description</th>
-<th width="50px">floor</th>
-<th width="50px">numberOfSeats</th>
-<th width="50px">action</th>
+	<th width="50px">id</th>
+	<th width="50px">code</th>
+	<th width="50px">name</th>
+	<th width="50px">description</th>
+	<th width="50px">floor</th>
+	<th width="50px">numberOfSeats</th>
+	<th width="50px">action</th>
 </tr>
 </thead>
 <tbody>
 <c:forEach var="room" items="${roomList}">
 <tr>
-<td>${room.id}</td>
-<td>${room.code}</td>
-<td>${room.name}</td>
-<td>${room.description}</td>
-<td>${room.floor}</td>
-<td>${room.numberOfSeats}</td>
-<td>
-<a href="${pageContext.request.contextPath}/room/edit/${room.id}.html">Edit</a><br/>
-<a href="${pageContext.request.contextPath}/room/delete/${room.id}.html">Delete</a><br/>
-</td>
+	<td>${room.id}</td>
+	<td>${room.code}</td>
+	<td>${room.name}</td>
+	<td>${room.description}</td>
+	<td>${room.floor}</td>
+	<td>${room.numberOfSeats}</td>
+	<td>
+		<a href="${pageContext.request.contextPath}/room/edit/${room.id}.html">Edit</a><br/>
+		<a href="${pageContext.request.contextPath}/room/delete/${room.id}.html">Delete</a><br/>
+	</td>
 </tr>
 </c:forEach>
 </tbody>
