@@ -13,29 +13,29 @@
 <table>
 <tbody>
 <tr>
-<td>Room.code:</td>
-<td><form:input path="code" /></td>
-<td><form:errors path="code" cssStyle="color: red;"/></td>
+	<td>Room.code:</td>
+	<td><form:input path="code" /></td>
+	<td><form:errors path="code" cssStyle="color: red;"/></td>
 </tr>
 <tr>
-<td>Room.name:</td>
-<td><form:input path="name" /></td>
-<td><form:errors path="name" cssStyle="color: red;"/></td>
+	<td>Room.name:</td>
+	<td><form:input path="name" /></td>
+	<td><form:errors path="name" cssStyle="color: red;"/></td>
 </tr>
 <tr>
-<td>Room.description:</td>
-<td><form:input path="description" /></td>
-<td><form:errors path="description" cssStyle="color: red;"/></td>
+	<td>Room.description:</td>
+	<td><form:input path="description" /></td>
+	<td><form:errors path="description" cssStyle="color: red;"/></td>
 </tr>
 <tr>
-<td>Room.floor:</td>
-<td><form:input path="floor" /></td>
-<td><form:errors path="floor" cssStyle="color: red;"/></td>
+	<td>Room.floor:</td>
+	<td><form:input path="floor" /></td>
+	<td><form:errors path="floor" cssStyle="color: red;"/></td>
 </tr>
 <tr>
-<td>Room.numberOfSeats:</td>
-<td><form:input path="numberOfSeats" /></td>
-<td><form:errors path="numberOfSeats" cssStyle="color: red;"/></td>
+	<td>Room.numberOfSeats:</td>
+	<td><form:input path="numberOfSeats" /></td>
+	<td><form:errors path="numberOfSeats" cssStyle="color: red;"/></td>
 </tr>
 <tr>
 <td><input type="submit" value="Create" /></td>
