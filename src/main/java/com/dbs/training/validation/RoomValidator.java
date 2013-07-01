@@ -19,11 +19,18 @@ public class RoomValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 		Room room = (Room) target;
 		
+		// REQUIRED fields
 		ValidationUtils.rejectIfEmpty(errors, "name", "room.name.empty");
 		ValidationUtils.rejectIfEmpty(errors, "code", "room.code.empty");
 		ValidationUtils.rejectIfEmpty(errors, "floor", "room.floor.empty");
 		ValidationUtils.rejectIfEmpty(errors, "numberOfSeats", "room.numberOfSeats.empty");
 
+		// INTEGER GREATER THAN 0
+		if (room.getFloor() < 1)
+			errors.rejectValue("floor", "room.floor.gt0");
+		if (room.getNumberOfSeats() < 1)
+			errors.rejectValue("floor", "room.numberOfSeats.gt0");
+		
 	}
 
 }
