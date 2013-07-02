@@ -24,6 +24,7 @@ import com.dbs.training.validation.RoomValidator;
 @Controller
 @RequestMapping(value="/room")
 public class RoomController {
+	private static final String MESSAGE_FORMAT = "Room successfully %s <br/> %s";
 	
 	@Autowired
 	private RoomService roomService;
@@ -51,7 +52,7 @@ public class RoomController {
 			return new ModelAndView("room-new");
 		
 		ModelAndView mav = new ModelAndView();
-		String message = "New room successfully created <br/>"+room.toString();
+		String message = String.format(MESSAGE_FORMAT, "created", room.toString());
 		
 		roomService.create(room);
 		mav.setViewName("redirect:/index.html");
@@ -86,7 +87,7 @@ public class RoomController {
 			return new ModelAndView("room-edit");
 		
 		ModelAndView mav = new ModelAndView("redirect:/index.html");
-		String message = "Room successfully updated <br/>"+room.toString();
+		String message = String.format(MESSAGE_FORMAT, "updated", room.toString());
 
 		roomService.update(room);
 		
@@ -101,7 +102,7 @@ public class RoomController {
 		ModelAndView mav = new ModelAndView("redirect:/index.html");		
 		
 		Room room = roomService.delete(id);
-		String message = "The room successfully deleted <br/>"+room.toString();
+		String message = String.format(MESSAGE_FORMAT, "deleted", room.toString());
 		
 		redirectAttributes.addFlashAttribute("message", message);
 		return mav;
