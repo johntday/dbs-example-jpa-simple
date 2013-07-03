@@ -1,0 +1,14 @@
+message.source.basename=i18n/messages
+
+#DB properties:
+db.driver=com.mysql.jdbc.Driver
+db.url=jdbc:mysql://localhost:3306/dbs-example-jpa-simple-db
+db.username=root
+db.password=877669
+
+#Hibernate Configuration:
+hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+hibernate.show_sql=true
+hibernate.hbm2ddl.auto=update
+
+entitymanager.packages.to.scan=com.dbs.training.model
