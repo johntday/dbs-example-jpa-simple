@@ -13,8 +13,8 @@
 
 <h3>Room</h3>
 <ul>
-	<li><a href="${pageContext.request.contextPath}/room/create.html">Create</a></li>
-	<li><a href="${pageContext.request.contextPath}/room/list.html">View all</a></li>
+	<li><a href="${pageContext.request.contextPath}/room/create">Create</a></li>
+	<li><a href="${pageContext.request.contextPath}/room/list">View all</a></li>
 </ul>
 
 </body>

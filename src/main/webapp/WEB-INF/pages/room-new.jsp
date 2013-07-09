@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>New Room page</h1>
-<form:form method="POST" commandName="room" action="${pageContext.request.contextPath}/room/create.html" >
+<form:form method="POST" commandName="room" action="${pageContext.request.contextPath}/room/create" >
 <table>
 <tbody>
 <tr>

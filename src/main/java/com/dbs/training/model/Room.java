@@ -1,37 +1,42 @@
 package com.dbs.training.model;
 
+import java.io.Serializable;
+
 import org.springframework.core.style.ToStringCreator;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 /**
- * Classroom.
+ * Classroom JPA entity.
  * 
- * @author jtday
+ * @author John T Day
  */
 @Entity
 @Table(name = "ROOM")
-public class Room {
+public class Room implements Serializable {
+	private static final long serialVersionUID = 1L;
+
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ROOM_ID")
 	private Integer id;
 	
-	@Column(name="ROOM_CD", nullable=false, length=45)
+	@Column(name="ROOM_CD", nullable=false, length=45, updatable=true, insertable=true)
 	private String	code;
 	
-	@Column(name="FLOOR_NBR", nullable=false)
+	@Column(name="FLOOR_NBR", nullable=false, updatable=true, insertable=true)
 	private int		floor;
 	
-	@Column(name="ROOM_NM", nullable=false, length=45)
+	@Column(name="ROOM_NM", nullable=false, length=45, updatable=true, insertable=true)
 	private String	name;
 	
-	@Column(name="ROOM_DESC", nullable=true, length=512)
+	@Column(name="ROOM_DESC", nullable=true, length=512, updatable=true, insertable=true)
 	private String	description;
 	
-	@Column(name="ROOM_SEATS_NBR", nullable=false)
+	@Column(name="ROOM_SEATS_NBR", nullable=false, updatable=true, insertable=true)
 	private int		numberOfSeats;
 
 	@Override

@@ -31,8 +31,8 @@
 	<td>${room.floor}</td>
 	<td>${room.numberOfSeats}</td>
 	<td>
-		<a href="${pageContext.request.contextPath}/room/edit/${room.id}.html">Edit</a><br/>
-		<a href="${pageContext.request.contextPath}/room/delete/${room.id}.html">Delete</a><br/>
+		<a href="${pageContext.request.contextPath}/room/edit/${room.id}">Edit</a><br/>
+		<a href="${pageContext.request.contextPath}/room/delete/${room.id}">Delete</a><br/>
 	</td>
 </tr>
 </c:forEach>

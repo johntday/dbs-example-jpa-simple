@@ -55,7 +55,7 @@ public class RoomController {
 		String message = String.format(MESSAGE_FORMAT, "created", room.toString());
 		
 		roomService.create(room);
-		mav.setViewName("redirect:/index.html");
+		mav.setViewName("redirect:/index");
 				
 		redirectAttributes.addFlashAttribute("message", message);	
 		return mav;		
@@ -86,7 +86,7 @@ public class RoomController {
 		if (result.hasErrors())
 			return new ModelAndView("room-edit");
 		
-		ModelAndView mav = new ModelAndView("redirect:/index.html");
+		ModelAndView mav = new ModelAndView("redirect:/index");
 		String message = String.format(MESSAGE_FORMAT, "updated", room.toString());
 
 		roomService.update(room);
@@ -99,7 +99,7 @@ public class RoomController {
 	public ModelAndView deleteRoom(@PathVariable Integer id,
 			final RedirectAttributes redirectAttributes) throws RoomNotFound {
 		
-		ModelAndView mav = new ModelAndView("redirect:/index.html");		
+		ModelAndView mav = new ModelAndView("redirect:/index");		
 		
 		Room room = roomService.delete(id);
 		String message = String.format(MESSAGE_FORMAT, "deleted", room.toString());
