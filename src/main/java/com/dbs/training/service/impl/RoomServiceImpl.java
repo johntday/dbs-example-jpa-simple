@@ -1,22 +1,19 @@
-package com.dbs.training.service;
+package com.dbs.training.service.impl;
 
 import java.util.List;
-
 import javax.annotation.Resource;
-
-import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.dbs.training.exception.RoomNotFound;
 import com.dbs.training.model.Room;
 import com.dbs.training.repository.RoomRepository;
+import com.dbs.training.service.RoomService;
 
 @Service
 public class RoomServiceImpl implements RoomService {
-	
+
 	@Resource
-	private RoomRepository roomRepository;
+	private RoomRepository	roomRepository;
 
 	@Override
 	@Transactional
@@ -24,7 +21,7 @@ public class RoomServiceImpl implements RoomService {
 		Room createdRoom = room;
 		return roomRepository.save(createdRoom);
 	}
-	
+
 	@Override
 	@Transactional
 	public Room findById(int id) {
@@ -32,13 +29,13 @@ public class RoomServiceImpl implements RoomService {
 	}
 
 	@Override
-	@Transactional(rollbackFor=RoomNotFound.class)
+	@Transactional(rollbackFor = RoomNotFound.class)
 	public Room delete(int id) throws RoomNotFound {
 		Room deletedRoom = roomRepository.findOne(id);
-		
+
 		if (deletedRoom == null)
 			throw new RoomNotFound();
-		
+
 		roomRepository.delete(deletedRoom);
 		return deletedRoom;
 	}
@@ -50,13 +47,9 @@ public class RoomServiceImpl implements RoomService {
 	}
 
 	@Override
-	@Transactional(rollbackFor=RoomNotFound.class)
+	@Transactional(rollbackFor = RoomNotFound.class)
 	public Room update(Room room) throws RoomNotFound {
-		Room updatedRoom = roomRepository.findOne(room.getId());
-		
-		if (updatedRoom == null)
-			throw new RoomNotFound();
-		BeanUtils.copyProperties(room, updatedRoom);
+		Room updatedRoom = roomRepository.save(room);
 		return updatedRoom;
 	}
 
